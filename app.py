@@ -6,6 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"  # TODO: replace with a strong random value
+app = Flask(__name__, template_folder="templates", static_folder="static")
 
 # ===== SQLite: create users table if not exists =====
 def get_db():
@@ -464,3 +465,4 @@ def admin_clear_orders():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
